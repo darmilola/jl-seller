@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d5d5d5"
+    tools:context=".Activities.SetUpShop">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:id="@+id/setupshoptoolbar"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Set Up Shop"
+                android:textSize="21dp"
+                android:id="@+id/setupshoptitle"
+                android:gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|left"
+
+                android:textColor="@color/White"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/displaynametitle"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Shop Display Name"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:maxLines="1"
+        android:inputType="text"
+        android:maxLength="60"
+        android:id="@+id/displaynamevalue"
+        android:layout_marginLeft="10dp"
+        android:gravity="left|center"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/setupshoprectangle"/>
+
+
+
+            <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Institution Located"
+        android:textSize="18dp"
+        android:id="@+id/shopcitytitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:maxLines="1"
+
+        android:gravity="left|center"
+        android:textSize="20dp"
+        android:id="@+id/shopcityvalue"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/setupshoprectangle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Area Located"
+                android:textSize="18dp"
+                android:id="@+id/shopareatitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#000000"
+                android:maxLines="1"
+                android:id="@+id/shopareavalue"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:gravity="left|center"
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/setupshoprectangle"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Set Pin Location"
+                android:textSize="18dp"
+                android:id="@+id/setpinlocationtitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:layout_gravity="center"/>
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/vendorlocationmap"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1" />
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Delivery Time"
+        android:textSize="18dp"
+        android:id="@+id/deliverytimetitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:text="Minute(s)"
+            android:textSize="18dp"
+            android:gravity="right"
+            android:id="@+id/deliverytimeminutestitle"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000000"
+            android:layout_gravity="top"/>
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:id="@+id/deliverytimeminutesvalue"
+            android:gravity="center"
+            android:maxLength="3"
+            android:inputType="number"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/setupshoprectangle"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Minimum  Order(Naira)"
+        android:textSize="18dp"
+        android:id="@+id/minimumordertitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000000"
+        android:layout_gravity="center"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:maxLines="1"
+        android:maxLength="4"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:id="@+id/minimumordervalue"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="10dp"
+
+        android:gravity="center|left"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/setupshoprectangle"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Delivery Fee(Naira)"
+                android:textSize="18dp"
+                android:id="@+id/deliveryfeetitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:layout_gravity="center"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#000000"
+                android:maxLines="1"
+                android:maxLength="4"
+                android:inputType="number"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:id="@+id/deliveryfeevalue"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:gravity="center|left"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/setupshoprectangle"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Payment Methods"
+                android:textSize="18dp"
+                android:id="@+id/paymentmethodtitle"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="Cash On Delivery"
+                    android:textSize="18dp"
+                    android:id="@+id/cashondeliverytitle"
+                    android:gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#000000"
+                    android:layout_gravity="top"/>
+               <CheckBox
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_marginLeft="10dp"
+                   android:id="@+id/cashondeliverycheckbox"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:text="Debit Card On Delivery"
+                        android:textSize="18dp"
+                        android:id="@+id/debitcardondeliverytitle"
+                        android:gravity="right"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="#000000"
+                        android:layout_gravity="top"/>
+                    <CheckBox
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/debitcardondeliverycheckbox"/>
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:textAllCaps="false"
+                android:id="@+id/setupshopuploadshopimage"
+                android:background="@drawable/buttondesign"
+                android:text="Upload Shop Image"/>
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco = "http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                fresco:actualImageScaleType="fitXY"
+                fresco:placeholderImageScaleType="fitXY"
+                fresco:placeholderImage="@drawable/productplaceholder"
+                fresco:roundedCornerRadius="3dp"
+                android:id="@+id/setupshopshopimage"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="Opening Hour"
+                android:textSize="18dp"
+                android:id="@+id/openinghourtitle"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+
+                android:textColor="#000000"
+                android:layout_gravity="top"/>
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textColor="#000000"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:id="@+id/openinghourvalue"
+                android:gravity="center"
+                android:focusable="false"
+                android:layout_marginLeft="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/setupshoprectangle"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:text="Closing Hour"
+                    android:textSize="18dp"
+                    android:id="@+id/closinghourtitle"
+                    android:gravity="left"
+                    android:layout_marginLeft="10dp"
+
+                    android:textColor="#000000"
+                    android:layout_gravity="top"/>
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:id="@+id/closinghourvalue"
+                    android:gravity="center"
+
+                    android:textSize="20dp"
+                    android:focusable="false"
+                    android:layout_marginLeft="10dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:textSize="18dp"
+                android:layout_marginBottom="10dp"
+                android:textAllCaps="false"
+                android:id="@+id/setupshopupcreateshopbutton"
+                android:background="@drawable/buttondesign"
+                android:text="Create Shop"/>
+       </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

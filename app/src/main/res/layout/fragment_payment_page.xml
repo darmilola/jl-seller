@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".Fragments.PaymentPage">
+
+    <ImageView
+      android:layout_width="80dp"
+      android:layout_height="80dp"
+      android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="damilolaakinterinwa@gmail.com"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:id="@+id/vendoremail"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#f4f3f3"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cardnumberlayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/productsmallimagebackgroundblack"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/cardnumbertitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:text="CARD NUMBER"
+                android:textColor="#80000000"
+                android:textSize="10dp" />
+
+            <EditText
+                android:id="@+id/cardnumbervalue"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/emptyview"
+                android:hint="0000 0000 0000 0000"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="16"
+                android:textColor="#80000000"
+                android:textColorHint="#80000000"
+                android:textSize="17dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/cardexpirylayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/productsmallimagebackgroundblack"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cardexpirytitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="CARD EXPIRY"
+                    android:textColor="#80000000"
+
+                    android:textSize="10dp" />
+
+                <EditText
+                    android:id="@+id/cardexpiryvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/emptyview"
+                    android:hint="MM/YY"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="5"
+                    android:textColor="#80000000"
+                    android:textColorHint="#80000000"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cvvlayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@drawable/productsmallimagebackgroundblack"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cvvtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="CVV"
+                    android:textColor="#80000000"
+                    android:textSize="10dp" />
+
+                <EditText
+                    android:id="@+id/cvvvalue"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/emptyview"
+                    android:hint="123"
+                    android:maxLength="3"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textColor="#80000000"
+                    android:textColorHint="#80000000"
+                    android:textSize="17dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/paybutton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/buttondesign"
+            android:text="Pay NGN 30,000"
+            android:textColor="#ffffff"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

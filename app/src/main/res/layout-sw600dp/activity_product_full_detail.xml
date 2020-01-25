@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/productdetailtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:orientation="horizontal">
+        <TextView
+            android:layout_width="450dp"
+            android:layout_height="wrap_content"
+            android:text="Elizabeth Arderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+            android:textSize="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/productfulldetailtoolbartitle"
+            android:textColor="@color/White"
+            />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/deleteproducticon"
+                android:src="@drawable/deleteproducticon"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:text="Available"
+                            android:textColor="#000000"
+                            android:gravity="center"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/availability_text"
+                            android:textSize="20dp"/>
+
+                        <Button
+                            android:id="@+id/availability_toggle"
+                            android:layout_width="70dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:background="#06e5b8"
+                            android:text="Yes"
+                            android:textColor="@color/White"
+                            android:gravity="center" />
+                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:src="@drawable/darkline"
+                        android:layout_margin="5dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Product Name ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+                        android:gravity="center|left"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="18dp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="5dp"
+                        android:textColor="#000000"
+                        android:id="@+id/productfulldetailname"/>
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:id="@+id/productfulldetailrecyclerview">
+
+                    </android.support.v7.widget.RecyclerView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:id="@+id/fulldetailproductsmallimagefirst"
+                                android:layout_gravity="center"
+                                android:background="@drawable/productsmallimagebackgroundblack"
+                                xmlns:fresco = "http://schemas.android.com/apk/res-auto"
+                                fresco:placeholderImage="@drawable/productplaceholder"
+                                fresco:actualImageScaleType="fitXY"
+                                fresco:placeholderImageScaleType="fitXY"/>
+                            <com.facebook.drawee.view.SimpleDraweeView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@drawable/productsmallimagebackgroundblack"
+                                android:id="@+id/fulldetailproductsmallimagesecond"
+                                android:layout_gravity="center"
+
+                                xmlns:fresco = "http://schemas.android.com/apk/res-auto"
+                                fresco:placeholderImage="@drawable/productplaceholder"
+                                fresco:actualImageScaleType="fitXY"
+                                fresco:placeholderImageScaleType="fitXY"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Price"
+                    android:textColor="#000000"
+                    android:id="@+id/fulldetailproductpricetitle"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="17dp"
+
+                    android:paddingTop="8dp"/>
+            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="N 6, 4990000000"
+                        android:textColor="#000000"
+                        android:textSize="18dp"
+                        android:paddingTop="8dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/fulldetailproductprice"
+                        android:layout_marginLeft="20dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="N 6000000"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15dp"
+                        android:paddingTop="8dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/fulldetaildeprecatedprice"
+                        android:layout_marginLeft="20dp"/>
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:text="-50%"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="15dp"
+                        android:gravity="center"
+                        android:id="@+id/fulldetailpercentdecrease"
+                        android:background="@drawable/whitepercentdecrease"
+                        android:textColor="@color/colorPrimary"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:background="#05000000">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Description"
+                    android:textColor="#000000"
+                    android:id="@+id/fulldetailproductdescriptiontitle"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="17dp"
+
+                    android:paddingTop="8dp"/>
+            </LinearLayout>
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="15dp"
+                        android:padding="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:gravity="left"
+                        android:textColor="#000000"
+                        android:background="@color/White"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/fulldetailproductdescription"
+                        android:text="This is where vendor will put the description of the product
+he/she is selling so that buyers can have an exact guess of what they are expending
+their money on     This is where vendor will put the description of the product
+he/she is selling so that buyers can have an exact guess of what they are expending
+their money on"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

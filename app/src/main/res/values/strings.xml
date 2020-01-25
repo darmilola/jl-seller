@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">JL Seller</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="Forgotpassword"><u>Forgot Password?</u></string>
+    <string name="channel_name">JL Market Seller</string>
+</resources>

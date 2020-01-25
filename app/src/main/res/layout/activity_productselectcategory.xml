@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    >
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:id="@+id/selectcategorytoolbar"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Select Category"
+                android:textSize="21dp"
+                android:id="@+id/selectcategorytitle"
+                android:gravity="bottom"
+                android:layout_marginBottom="10dp"
+
+                android:layout_gravity="center|left"
+
+                android:textColor="@color/White"/>
+
+    </android.support.v7.widget.Toolbar>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="50dp"
+        android:id="@+id/categorydisplayrecyclerview">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/categoryprogressbarlayout">
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nothing to display Please Create a new Category"
+        android:textSize="23dp"
+        android:textColor="#000000"
+        android:id="@+id/emptycategorytext"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/errorlayout">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/erroricon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#90000000"
+            android:text="Error Occured please try again"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/errortext"
+            android:textSize="23dp"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Try Again"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/errorbutton"
+            android:background="@drawable/loginbuttondesign"
+            android:textColor="@color/White"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/nonetworklayout">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/no_connection" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#90000000"
+            android:text="No Network Connection"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/nonetworktext"
+            android:textSize="23dp"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Try Again"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nonetworkbutton"
+            android:background="@drawable/loginbuttondesign"
+            android:textColor="@color/White"/>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#b70d0e28"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        >
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/loginemailaddress"
+                android:textColor="#ffffff"
+                android:textColorHint="#00000050"
+                android:drawablePadding="10dp"
+                android:hint="E-mail Address"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="18dp"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="20dp"
+
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/loginpassword"
+                android:textColor="#ffffff"
+                android:drawablePadding="10dp"
+                android:textColorHint="#50000000"
+                android:hint="Password" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="45dp"
+            android:text="LOG IN"
+
+            android:id="@+id/loginlogin"
+            android:gravity="center"
+            android:layout_gravity="center|top"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            android:background="@drawable/loginbuttondesign"
+            android:textColor="@color/White"
+            android:textSize="15dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center|right"
+            android:text="@string/Forgotpassword"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/forgotpassword"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="10dp"
+            android:textSize="15dp"/>
+
+    </LinearLayout>
+</LinearLayout>

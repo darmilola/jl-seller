@@ -1,0 +1,154 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 1048576 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=61976, tid=0x000000000000ed74
+#
+# JRE version:  (8.0_152-b02) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.152-b02 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002de7800):  JavaThread "Unknown thread" [_thread_in_vm, id=60788, stack(0x0000000002c30000,0x0000000002d30000)]
+
+Stack: [0x0000000002c30000,0x0000000002d30000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0000000002de7800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=60788, stack(0x0000000002c30000,0x0000000002d30000)]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18944K, used 327K [0x00000000feb00000, 0x0000000100000000, 0x0000000100000000)
+  eden space 16384K, 2% used [0x00000000feb00000,0x00000000feb51ec8,0x00000000ffb00000)
+  from space 2560K, 0% used [0x00000000ffd80000,0x00000000ffd80000,0x0000000100000000)
+  to   space 2560K, 0% used [0x00000000ffb00000,0x00000000ffb00000,0x00000000ffd80000)
+ ParOldGen       total 44032K, used 0K [0x00000000fc000000, 0x00000000feb00000, 0x00000000feb00000)
+  object space 44032K, 0% used [0x00000000fc000000,0x00000000fc000000,0x00000000feb00000)
+ Metaspace       used 772K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 73K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000001470000,0x00000000014a0000] byte_map_base: 0x0000000000c90000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005e3c4970
+ Begin Bits: [0x00000000126a0000, 0x00000000127a0000)
+ End Bits:   [0x00000000127a0000, 0x00000000128a0000)
+
+Polling page: 0x0000000000eb0000
+
+CodeCache: size=245760Kb used=328Kb max_used=328Kb free=245431Kb
+ bounds [0x0000000002ee0000, 0x0000000003150000, 0x0000000011ee0000]
+ total_blobs=57 nmethods=0 adapters=38
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (10 events):
+Event: 0.105 loading class java/lang/Short
+Event: 0.105 loading class java/lang/Short done
+Event: 0.105 loading class java/lang/Integer
+Event: 0.105 loading class java/lang/Integer done
+Event: 0.105 loading class java/lang/Long
+Event: 0.105 loading class java/lang/Long done
+Event: 0.106 loading class java/lang/NullPointerException
+Event: 0.106 loading class java/lang/NullPointerException done
+Event: 0.106 loading class java/lang/ArithmeticException
+Event: 0.106 loading class java/lang/ArithmeticException done
+
+
+Dynamic libraries:
+0x00007ff75e000000 - 0x00007ff75e031000 	C:\Program Files\Android\Android Studio1\jre\bin\java.exe
+0x00007ffd0ba80000 - 0x00007ffd0bc42000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffd09970000 - 0x00007ffd09a1d000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffd08f60000 - 0x00007ffd0913d000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffd09a20000 - 0x00007ffd09ac6000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffd09400000 - 0x00007ffd0949d000 	C:\Windows\system32\msvcrt.dll
+0x00007ffd09ad0000 - 0x00007ffd09b2b000 	C:\Windows\system32\sechost.dll
+0x00007ffd09630000 - 0x00007ffd09756000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffd094a0000 - 0x00007ffd095ee000 	C:\Windows\system32\USER32.dll
+0x00007ffd0a290000 - 0x00007ffd0a413000 	C:\Windows\system32\GDI32.dll
+0x00007ffcfd440000 - 0x00007ffcfd6b4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10240.17184_none_f41d7a705752bce6\COMCTL32.dll
+0x00007ffd095f0000 - 0x00007ffd09626000 	C:\Windows\system32\IMM32.DLL
+0x00007ffd09290000 - 0x00007ffd093ec000 	C:\Windows\system32\MSCTF.dll
+0x000000005db20000 - 0x000000005dbf2000 	C:\Program Files\Android\Android Studio1\jre\jre\bin\msvcr100.dll
+0x000000005dc00000 - 0x000000005e43f000 	C:\Program Files\Android\Android Studio1\jre\jre\bin\server\jvm.dll
+0x00007ffd09d40000 - 0x00007ffd09d48000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffcfd140000 - 0x00007ffcfd14a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffd06be0000 - 0x00007ffd06be9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffd06470000 - 0x00007ffd06493000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffd0a4e0000 - 0x00007ffd0a549000 	C:\Windows\system32\WS2_32.dll
+0x00007ffd093f0000 - 0x00007ffd093f8000 	C:\Windows\system32\NSI.dll
+0x00007ffd06440000 - 0x00007ffd0646c000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffd08d40000 - 0x00007ffd08d84000 	C:\Windows\system32\cfgmgr32.dll
+0x00007ffd06e20000 - 0x00007ffd06e47000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00007ffd068f0000 - 0x00007ffd068ff000 	C:\Program Files\Android\Android Studio1\jre\jre\bin\verify.dll
+0x00007ffd06520000 - 0x00007ffd06549000 	C:\Program Files\Android\Android Studio1\jre\jre\bin\java.dll
+0x00007ffd06570000 - 0x00007ffd06586000 	C:\Program Files\Android\Android Studio1\jre\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Xmx64M -Dfile.encoding=windows-1252 -Duser.country=US -Duser.language=en -Duser.variant 
+java_command: com.google.devtools.build.android.desugar.Desugar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\17.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\18.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\5.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\6.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\36.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\37.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\3.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\4.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\10.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\11.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\39.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\40.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\55.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\56.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\12.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\13.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\28.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\29.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\44.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\45.jar --input C:\emarketvendor\app\build\intermediates\transforms\stackFramesFixer\debug\37.jar --output C:\emarketvendor\app\build\intermediates\transforms\desugar\debug\38.jar --input C:\emarketvendor\app\build\intermediat
+java_class_path (initial): C:\Users\ALEXANDRE\AppData\Local\Temp\desugar_deploy.jar5007925757317479855
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_121
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Qt\Qt5.6.2\5.6\mingw49_32\bin;C:\Qt\Qt5.6.2\Tools\QtCreator\bin;C:\vstudio;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Qt\Qt5.6.2\5.6\mingw49_32\bin;C:\Qt\Qt5.6.2\Tools\mingw492_32;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\C:\MinGW\bin;C:\MinGW\include;C:\MinGW\mingw32\bin;C:\Qt\Qt5.6.2\Tools\mingw492_32\bin;C:\Users\ALEXANDRE\Desktop\gradle-3.5\bin;C:\Program Files\Android\Android Studio\bin;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\MATLAB\R2013\runtime\win32;C:\Program Files (x86)\MATLAB\R2013\bin;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\android-studio-ide-162.3934792-windows\android-studio\gradle\gradle-4.6-bin;C:\Users\ALEXANDRE\Desktop\bin;C:\Program Files (x86)\Git\cmd;C:\Program Files\Java\jre7\bin;;C:\Program Files (x86)\Microsoft VS Code\bin
+USERNAME=ALEXANDRE
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 10240 (10.0.10240.17113)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, clmul, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 4140908k(580092k free), swap 5575532k(42164k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.152-b02) for windows-amd64 JRE (1.8.0_152-release-1024-b02), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Wed Mar 06 01:15:52 2019
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

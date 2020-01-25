@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#d5d5d5"
+    tools:context=".Activities.addnewProduct">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:id="@+id/addnewproducttoolbar"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Add New Product"
+                android:textSize="22dp"
+                android:id="@+id/addnewproducttitle"
+                android:gravity="bottom"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|left"
+
+                android:textColor="@color/White"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/newproductnametitle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text=" Name"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:maxLength="70"
+            android:inputType="text"
+            android:scrollHorizontally="true"
+            android:id="@+id/newproductnamevalue"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/setupshoprectangle"/>
+        <TextView
+            android:id="@+id/newproductpricetitle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text=" Price"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:maxLines="1"
+
+            android:inputType="number"
+            android:id="@+id/newproductpricevalue"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/setupshoprectangle"/>
+        <TextView
+            android:id="@+id/newproductreducedpricetitle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Final Price (Optional)"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:inputType="number"
+            android:id="@+id/newproductreducedpricevalue"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/setupshoprectangle"/>
+
+        <TextView
+            android:id="@+id/newproductcategorytitle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Category"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#000000"
+            android:maxLines="1"
+            android:inputType="text"
+            android:id="@+id/newproductcategoryvalue"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+            android:gravity="center|left"
+            android:background="@drawable/setupshoprectangle"/>
+        <TextView
+            android:id="@+id/newproductdescriptiontitle"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Description"
+            android:textColor="#000000"
+            android:textSize="18dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:textColor="#000000"
+            android:id="@+id/newproductdescriptionvalue"
+            android:padding = "10dp"
+            android:gravity="top"
+            android:maxLength="800"
+            android:textSize="18dp"
+            android:overScrollMode="always"
+            android:scrollbarStyle="insideInset"
+            android:scrollbars="vertical"
+            android:layout_marginLeft="10dp"
+            android:text=""
+            android:layout_marginRight="10dp"
+            android:background="@drawable/setupshoprectangle"/>
+        <TextView
+            android:id="@+id/newproductrequired"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="(Required)"
+            android:textColor="#80000000"
+            android:textSize="18dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textAllCaps="false"
+            android:enabled="true"
+            android:id="@+id/addnewproductuploadimagefirst"
+            android:background="@drawable/buttondesign"
+            android:text="Upload Product Image(1)"/>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            xmlns:fresco = "http://schemas.android.com/apk/res-auto"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            fresco:actualImageScaleType="fitXY"
+            fresco:placeholderImageScaleType="fitXY"
+            fresco:placeholderImage="@drawable/productplaceholder"
+            fresco:roundedCornerRadius="3dp"
+            android:id="@+id/addnewproductimagefirst"
+            />
+        <TextView
+            android:id="@+id/newproductaddoptionalfirst"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="(Optional)"
+            android:textColor="#80000000"
+            android:textSize="18dp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:textAllCaps="false"
+            android:id="@+id/addnewproductuploadimagesecond"
+            android:enabled="false"
+            android:background="@drawable/buttondesign"
+            android:text="Upload Product Image(2)"/>
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            xmlns:fresco = "http://schemas.android.com/apk/res-auto"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            fresco:placeholderImage="@drawable/productplaceholder"
+            fresco:actualImageScaleType="fitXY"
+            fresco:placeholderImageScaleType="fitXY"
+            fresco:roundedCornerRadius="3dp"
+            android:id="@+id/addnewproductimagesecond"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+
+            android:textAllCaps="false"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/addnewproductbutton"
+            android:background="@drawable/buttondesign"
+            android:text="Add Product"/>
+</LinearLayout>
+</android.support.v4.widget.NestedScrollView>
+</LinearLayout>

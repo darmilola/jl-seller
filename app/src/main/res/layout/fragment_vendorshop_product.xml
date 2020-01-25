@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/White"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:id="@+id/shoptoggle_container"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Shop Status"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/shop_open_text"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/shop_open_toggle"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:background="#f83737"
+            android:text="Closed"
+            android:textColor="@color/White"
+            android:gravity="center" />
+    </RelativeLayout>
+
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:layout_marginTop="60dp"
+    android:id="@+id/main_recyclerview">
+
+</android.support.v7.widget.RecyclerView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:visibility="visible"
+    android:orientation="vertical"
+    android:id="@+id/welcomemelayout"
+
+    >
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="80dp"
+       android:textSize="23dp"
+       android:gravity="center"
+       android:layout_gravity="center"
+       android:textColor="#000000"
+       android:lineSpacingExtra="5dp"
+       android:id="@+id/welcomemessage"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:text="Welcome to JL Seller App"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:text="Set up shop"
+       android:textSize="20dp"
+       android:textAllCaps="false"
+       android:id="@+id/vendorshopproductssetupshop"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:background="@drawable/buttondesign"
+       android:textColor="@color/White"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:text="Add products Category"
+       android:textSize="20dp"
+       android:textAllCaps="false"
+       android:id="@+id/vendorshopproductaddproductcategory"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="10dp"
+       android:background="@drawable/buttondesign"
+       android:textColor="@color/White"/>
+
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:text="Add products"
+       android:textSize="20dp"
+       android:textAllCaps="false"
+       android:id="@+id/vendorshopproductaddproducts"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="10dp"
+       android:background="@drawable/buttondesign"
+       android:textColor="@color/White"/>
+   <Button
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:text="Add delivery location"
+       android:textSize="20dp"
+       android:textAllCaps="false"
+       android:id="@+id/vendorshopproductadddeliverylocation"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="10dp"
+       android:background="@drawable/buttondesign"
+       android:textColor="@color/White"/>
+
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progressbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+   <android.support.design.widget.FloatingActionButton
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:layout_gravity="right|bottom"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+       android:layout_marginBottom="10dp"
+    android:scaleType="center"
+    app:fabSize="normal"
+    android:id="@+id/addnewproductfab"
+    android:src="@drawable/addnewproducticon"/>
+</android.support.design.widget.CoordinatorLayout>

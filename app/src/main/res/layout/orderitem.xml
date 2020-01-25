@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="New Order has been received"
+        android:textSize="20dp"
+        android:textColor="#000000"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/receivedordermessage"
+        android:layout_gravity="center"
+        android:gravity="left|center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Order #12345"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#90000000"
+        android:layout_gravity="center"
+        android:id="@+id/orderno"
+        android:gravity="left|center"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="80dp"
+        android:textSize="30dp"
+        android:textColor="#99000000"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/orderviewoptions"
+        android:layout_marginRight="15dp"
+        android:text="&#8942;"
+        />
+</RelativeLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:src="@drawable/darkline"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+</LinearLayout>

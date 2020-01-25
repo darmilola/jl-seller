@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ebebeb"
+    tools:context=".Activities.Showproductcategory">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:id="@+id/productcategoriestoolbar"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Product Categories"
+                android:textSize="21dp"
+                android:id="@+id/productcategoriestitle"
+                android:gravity="center|left"
+                android:textColor="@color/White"/>
+
+    </android.support.v7.widget.Toolbar>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:textAllCaps="false"
+        android:id="@+id/addmorecategorybutton"
+        android:background="@drawable/buttondesign"
+        android:text="Add more product categories"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/showproductcategoriescontainer"
+        android:visibility="gone"
+        android:layout_marginTop="55dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/editcategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Edit"
+                    android:gravity="right"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18dp" />
+    <TextView
+        android:id="@+id/category1title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Category 1"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#000000"
+        android:maxLines="1"
+        android:inputType="text"
+        android:id="@+id/category1value"
+        android:layout_marginLeft="10dp"
+        android:gravity="left|center"
+        android:textSize="20dp"
+        android:paddingLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category2title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 2"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category2value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+
+                <TextView
+                    android:id="@+id/category3title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 3"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category3value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category4title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 4"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category4value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+
+                <TextView
+                    android:id="@+id/category5title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 5"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category5value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category6title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 6"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category6value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+
+                <TextView
+                    android:id="@+id/category7title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 7"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category7value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category8title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 8"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category8value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category9title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 9"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category9value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+                <TextView
+                    android:id="@+id/category10title"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Category 10"
+                    android:textColor="#000000"
+                    android:textSize="18dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textColor="#000000"
+                    android:maxLines="1"
+                    android:inputType="text"
+                    android:id="@+id/category10value"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left|center"
+                    android:textSize="20dp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/setupshoprectangle"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/progressbarlayout"
+        android:orientation="vertical">
+    <ProgressBar
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/errorlayout">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/erroricon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#90000000"
+            android:text="Error Occured please try again"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/errortext"
+            android:textSize="23dp"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Try Again"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/errorbutton"
+            android:background="@drawable/loginbuttondesign"
+            android:textColor="@color/White"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:id="@+id/nonetworklayout">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/no_connection" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#90000000"
+            android:text="No Network Connection"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/nonetworktext"
+            android:textSize="23dp"/>
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="Try Again"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/nonetworkbutton"
+            android:background="@drawable/loginbuttondesign"
+            android:textColor="@color/White"/>
+    </LinearLayout>
+</RelativeLayout>
