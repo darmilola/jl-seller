@@ -10,7 +10,7 @@
     <ImageView
       android:layout_width="80dp"
       android:layout_height="80dp"
-      android:src="@drawable/logo"/>
+      android:src="@drawable/newicon"/>
 
     <TextView
         android:layout_width="match_parent"

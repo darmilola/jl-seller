@@ -30,7 +30,7 @@ public class GettingStartedActivity extends AppCompatActivity {
             "    Note: you can only add up to 10 product categories. You can also come back later to edit the categories.</p>\n" +
             "<h3>Step 3:</h3>\n" +
             "<p>Add delivery location:</p>\n" +
-            "<p>Visit the delivery location page to add the Institution and area you can deliver to within the delivery time specified during setting up shop.\n" +
+            "<p>Visit the delivery location page to add the State and area you can deliver to within the delivery time specified during setting up shop.\n" +
             "    Note: You cannot deliver to more than 10 delivery locations.</p>\n" +
             "<h3>Step 4:</h3>\n" +
             "<p>Add products:</p>\n" +
@@ -70,9 +70,7 @@ public class GettingStartedActivity extends AppCompatActivity {
     }
 
     private void InitializeView(){
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         toolbar = findViewById(R.id.gettingstartedtoolbar);
         gettingstartedtext = findViewById(R.id.gettingstartedtext);
          gettingstartedtext.setText(Html.fromHtml(text));

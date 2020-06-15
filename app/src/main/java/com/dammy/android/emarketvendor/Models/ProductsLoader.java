@@ -386,7 +386,7 @@ class ProductsLoader implements InteractorLayer {
             String vendoremail = j.getString("vendorid");
             String availability = j.getString("availability");
             ProductModel productModel = new ProductModel(productdescription,productname,price,firstimage);
-            if(!secondimage.equalsIgnoreCase("NULL")) {
+            if(!secondimage.equalsIgnoreCase("NULL") && !secondimage.equalsIgnoreCase("")) {
                 productModel = new ProductModel(productdescription,productname,price,firstimage,secondimage);
 
             }

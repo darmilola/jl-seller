@@ -146,9 +146,7 @@ public class signup extends AppCompatActivity {
         phonenumberfield.setTypeface(customfont2);
         vendoridfield.setTypeface(customfont2);
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 1.0f;
-        getWindow().setAttributes(layoutParams);
+
         // ActionBar actionBar = getSupportActionBar();
         //actionBar.hide();,
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -265,13 +263,30 @@ public class signup extends AppCompatActivity {
         }
     }
 
-    public String getStringImage(Bitmap bitmap) {
 
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 50, byteArrayOutputStream);
-        byte[] imagebytes = byteArrayOutputStream.toByteArray();
-        String encodedImage = Base64.encodeToString(imagebytes, Base64.DEFAULT);
+
+    public static String getStringImage(Bitmap bitmap){
+        final int MAX_IMAGE_SIZE = 500 * 1024; // max final file size in kilobytes
+        byte[] bmpPicByteArray;
+
+        //Bitmap scBitmap  = Bitmap.createScaledBitmap(bitmap, 300, 300, false);
+
+
+        int compressQuality = 100; // quality decreasing by 5 every loop.
+        int streamLength;
+        do{
+            ByteArrayOutputStream bmpStream = new ByteArrayOutputStream();
+            Log.d("compressBitmap", "Quality: " + compressQuality);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream);
+            bmpPicByteArray = bmpStream.toByteArray();
+            streamLength = bmpPicByteArray.length;
+            compressQuality -= 5;
+            Log.d("compressBitmap", "Size: " + streamLength/1024+" kb");
+        }while (streamLength >= MAX_IMAGE_SIZE);
+
+        String encodedImage = Base64.encodeToString(bmpPicByteArray, Base64.DEFAULT);
         return encodedImage;
+
     }
 
     private Boolean isNetworkAvailable() {

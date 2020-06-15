@@ -197,9 +197,7 @@ public class Showdeliverylocation extends AppCompatActivity {
         addmorelocation.setTypeface(customfont);
         addmorelocation.setVisibility(View.GONE);
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

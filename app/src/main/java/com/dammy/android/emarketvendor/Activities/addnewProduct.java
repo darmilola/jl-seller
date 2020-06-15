@@ -186,9 +186,7 @@ public class addnewProduct extends AppCompatActivity {
         descriptionvalue.setTypeface(customfont2);
 
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
 
     }
 
@@ -596,13 +594,28 @@ public class addnewProduct extends AppCompatActivity {
 
         }
 
-    public String getStringImage(Bitmap bitmap) {
+    public static String getStringImage(Bitmap bitmap){
+        final int MAX_IMAGE_SIZE = 500 * 1024; // max final file size in kilobytes
+        byte[] bmpPicByteArray;
 
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 50, byteArrayOutputStream);
-        byte[] imagebytes = byteArrayOutputStream.toByteArray();
-        String encodedImage = Base64.encodeToString(imagebytes, Base64.DEFAULT);
+        //Bitmap scBitmap  = Bitmap.createScaledBitmap(bitmap, 200, 250, false);
+
+
+        int compressQuality = 100; // quality decreasing by 5 every loop.
+        int streamLength;
+        do{
+            ByteArrayOutputStream bmpStream = new ByteArrayOutputStream();
+            Log.d("compressBitmap", "Quality: " + compressQuality);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream);
+            bmpPicByteArray = bmpStream.toByteArray();
+            streamLength = bmpPicByteArray.length;
+            compressQuality -= 5;
+            Log.d("compressBitmap", "Size: " + streamLength/1024+" kb");
+        }while (streamLength >= MAX_IMAGE_SIZE);
+
+        String encodedImage = Base64.encodeToString(bmpPicByteArray, Base64.DEFAULT);
         return encodedImage;
+
     }
 
     public class updateproducttask extends AsyncTask {
@@ -816,7 +829,7 @@ public class addnewProduct extends AppCompatActivity {
         }
         if(!TextUtils.isEmpty(price) && !TextUtils.isEmpty(reducedprice)) {
             if (Integer.parseInt(reducedprice) >= Integer.parseInt(price)) {
-                Toast.makeText(this, "Final price cannot be greater than real price", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Discounted price cannot be greater than real price", Toast.LENGTH_SHORT).show();
                 valid = false;
             }
         }

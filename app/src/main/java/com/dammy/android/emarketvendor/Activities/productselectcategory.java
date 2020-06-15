@@ -88,9 +88,7 @@ public class productselectcategory extends AppCompatActivity {
 
     private void Initializeview() {
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         recyclerView = findViewById(R.id.categorydisplayrecyclerview);
         emptycategorytext = findViewById(R.id.emptycategorytext);
         progressbarlayout = findViewById(R.id.categoryprogressbarlayout);

@@ -156,9 +156,7 @@ public class Showproductcategory extends AppCompatActivity {
         category9value.setTypeface(customfont);
         category10value.setTypeface(customfont);
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

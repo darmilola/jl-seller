@@ -108,9 +108,7 @@ public class OrderInfoVieworder extends AppCompatActivity   {
     }
 
     private void initview() {
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         recyclerView = findViewById(R.id.viewOrderRecyclerView);
         subtotal = findViewById(R.id.subtotal);
         subtotalvalue =findViewById(R.id.subtotalvalue);

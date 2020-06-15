@@ -62,7 +62,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             bigTextStyle.bigText(message);
             PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this,channelid)
-                    .setSmallIcon(R.drawable.appicon)
+                    .setSmallIcon(R.drawable.newicon)
                     .setStyle(bigTextStyle)
                     .setChannelId(channelid)
                     .setContentIntent(pendingIntent)

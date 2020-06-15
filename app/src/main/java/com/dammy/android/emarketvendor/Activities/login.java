@@ -39,9 +39,7 @@ public class login extends AppCompatActivity {
 
 
     private void initializeView(){
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         container = (LinearLayout) findViewById(R.id.container);
         Bitmap original = BitmapFactory.decodeResource(getResources(),R.drawable.womansecondimage);
         Bitmap blurr = BlurBuilder.blur(login.this,original);

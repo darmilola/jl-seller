@@ -591,9 +591,7 @@ public class newOrderuserInfo extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.White), PorterDuff.Mode.SRC_ATOP);
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         mapView = findViewById(R.id.orderinfomap);
         Title = findViewById(R.id.orderinfotoolbartitle);
         vieworder = findViewById(R.id.orderinfovieworder);

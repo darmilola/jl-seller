@@ -498,13 +498,28 @@ public class SetUpShop extends AppCompatActivity {
         }
     }
 
-    public String getStringImage(Bitmap bitmap) {
+    public static String getStringImage(Bitmap bitmap){
+        final int MAX_IMAGE_SIZE = 500 * 1024; // max final file size in kilobytes
+        byte[] bmpPicByteArray;
 
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 50, byteArrayOutputStream);
-        byte[] imagebytes = byteArrayOutputStream.toByteArray();
-        String encodedImage = Base64.encodeToString(imagebytes, Base64.DEFAULT);
+        //Bitmap scBitmap  = Bitmap.createScaledBitmap(bitmap, 300, 250, false);
+
+
+        int compressQuality = 100; // quality decreasing by 5 every loop.
+        int streamLength;
+        do{
+            ByteArrayOutputStream bmpStream = new ByteArrayOutputStream();
+            Log.d("compressBitmap", "Quality: " + compressQuality);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream);
+            bmpPicByteArray = bmpStream.toByteArray();
+            streamLength = bmpPicByteArray.length;
+            compressQuality -= 5;
+            Log.d("compressBitmap", "Size: " + streamLength/1024+" kb");
+        }while (streamLength >= MAX_IMAGE_SIZE);
+
+        String encodedImage = Base64.encodeToString(bmpPicByteArray, Base64.DEFAULT);
         return encodedImage;
+
     }
 
     private void showloadingdialog() {
@@ -568,9 +583,7 @@ public class SetUpShop extends AppCompatActivity {
         setpintitle = (TextView) findViewById(R.id.setpinlocationtitle);
         paymentmethodtitle = findViewById(R.id.paymentmethodtitle);
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
 
         paymentmethodtitle.setTypeface(customfont);
 

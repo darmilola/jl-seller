@@ -187,9 +187,7 @@ public class ProductFullDetail extends AppCompatActivity {
             available_toggle.setText("no");
         }
 
-        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-        layoutParams.screenBrightness = 0.5f;
-        getWindow().setAttributes(layoutParams);
+
         descriptionTitle.setTypeface(customfont2);
         DeprecatedPrice.setTypeface(customfont2);
         productname.setTypeface(customfont2);
