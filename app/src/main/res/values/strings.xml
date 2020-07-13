@@ -6,4 +6,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="Forgotpassword"><u>Forgot Password?</u></string>
     <string name="channel_name">JL Market Seller</string>
+    <string name="reg_id_gen"><u>Get Registration ID</u></string>
 </resources>

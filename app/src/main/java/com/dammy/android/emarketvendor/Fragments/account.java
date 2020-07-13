@@ -13,12 +13,13 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -82,7 +83,7 @@ public class account extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@NonNull Bundle savedinstance){
+    public void onActivityCreated(Bundle savedinstance){
         super.onActivityCreated(savedinstance);
         if(vendorprofiles == null){
             Intent intent = new Intent(getContext(),splashscreen.class);
@@ -282,20 +283,16 @@ public class account extends Fragment {
     }
 
     private void showloadingdialog() {
-        loadingdialog = new Dialog(getContext(), R.style.Dialog_Theme);
+        loadingdialog = new Dialog(getContext(), android.R.style.Theme_Light);
+        loadingdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         loadingdialog.setContentView(R.layout.loadingdialog);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.loading);
         ImageView image = loadingdialog.findViewById(R.id.loadingimage);
         DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
         Glide.with(getContext()).load(R.drawable.loading).into(imageViewTarget);
-        loadingdialog.show();
         loadingdialog.setCancelable(false);
-        getActivity().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            loadingdialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            loadingdialog.getWindow().setStatusBarColor(getActivity().getResources().getColor(R.color.colorPrimaryDark));
-        }
+
+        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        loadingdialog.show();
     }
         private Boolean isNetworkAvailable() {
 

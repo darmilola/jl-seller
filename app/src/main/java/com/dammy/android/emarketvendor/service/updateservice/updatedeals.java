@@ -2,7 +2,7 @@ package com.dammy.android.emarketvendor.service.updateservice;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+
 import android.util.Log;
 
 import com.dammy.android.emarketvendor.Models.dealmodel;

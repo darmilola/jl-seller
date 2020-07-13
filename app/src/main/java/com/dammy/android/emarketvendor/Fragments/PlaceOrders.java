@@ -10,7 +10,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -106,7 +105,7 @@ public class PlaceOrders extends Fragment  {
 
 
     @Override
-    public void onActivityCreated(@NonNull Bundle savedinstance){
+    public void onActivityCreated(Bundle savedinstance){
         super.onActivityCreated(savedinstance);
         if(vendoremail == null){
          Intent intent = new Intent(getContext(),splashscreen.class);

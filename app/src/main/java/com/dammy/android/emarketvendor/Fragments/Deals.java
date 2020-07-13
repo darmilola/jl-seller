@@ -28,6 +28,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -231,9 +232,6 @@ public class Deals extends Fragment {
         });
         dealdescriptionedittext.setTypeface(customfont2);
         startdealButton.setTypeface(customfont2);
-        WindowManager.LayoutParams layoutParams = getActivity().getWindow().getAttributes();
-        layoutParams.screenBrightness = 1.0f;
-        getActivity().getWindow().setAttributes(layoutParams);
         getActivity().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
         startdealdialog.show();
         startdealdialog.setCancelable(true);
@@ -245,23 +243,17 @@ public class Deals extends Fragment {
         }
     }
 
-    private void showloadingdialog(){
-        loadingdialog = new Dialog(getContext(),R.style.Dialog_Theme);
+    private void showloadingdialog() {
+        loadingdialog = new Dialog(getContext(), android.R.style.Theme_Light);
+        loadingdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         loadingdialog.setContentView(R.layout.loadingdialog);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.loading);
         ImageView image = loadingdialog.findViewById(R.id.loadingimage);
-         DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
-         Glide.with(getContext()).load(R.drawable.loading).into(imageViewTarget);
-        loadingdialog.show();
+        DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
+        Glide.with(getContext()).load(R.drawable.loading).into(imageViewTarget);
         loadingdialog.setCancelable(false);
-        getActivity().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
-        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            loadingdialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            loadingdialog.getWindow().setStatusBarColor(getActivity().getResources().getColor(R.color.colorPrimaryDark));
-        }
 
-
+        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        loadingdialog.show();
     }
 
 

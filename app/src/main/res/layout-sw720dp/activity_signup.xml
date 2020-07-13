@@ -250,6 +250,16 @@
                                 android:background="@drawable/signuprectangle"/>
 
                         </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reg_id_gen"
+                            android:gravity="center"
+                            android:id="@+id/get_reg_id"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp"/>
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="50dp"

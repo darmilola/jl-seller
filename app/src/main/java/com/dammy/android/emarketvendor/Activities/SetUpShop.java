@@ -24,13 +24,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -40,7 +39,6 @@ import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.dammy.android.emarketvendor.MainActivity;
 import com.dammy.android.emarketvendor.Models.vendorprofile;
 import com.dammy.android.emarketvendor.R;
-import com.dammy.android.emarketvendor.openingPageActivity;
 import com.dammy.android.emarketvendor.splashscreen;
 import com.facebook.common.executors.CallerThreadExecutor;
 import com.facebook.common.references.CloseableReference;
@@ -67,10 +65,9 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.FormBody;
@@ -82,26 +79,21 @@ import okhttp3.Response;
 public class SetUpShop extends AppCompatActivity {
 
     Toolbar toolbar;
-    TextView paymentmethodtitle, title, shopcitytitle, shopdisplaynametitle, deliverytimetitle, minutestitle, minimumordertitle,
+    TextView paymentmethodtitle, title, shopcitytitle, shopdisplaynametitle, deliverytimetitle, hourstitle, minimumordertitle,
             openinghourvalue, openinghourtitle, closinghourtitle,
             deliveryfeetitle,
             cashondelivery, debitcardondelivery, closinghourvalue, shopcityvalue,
-            shopareatitle, shopareavalue, setpintitle,deliveryarea1value,deliveryarea2value,deliveryarea3value
-            ,deliveryarea4value,deliveryarea5value,deliveryarea6value,deliveryarea7value,deliveryarea8value,deliveryarea9value,deliveryarea10value
-            ,deliverycity1value,deliverycity2value,deliverycity3value,deliverycity4value,deliverycity5value,deliverycity6value,deliverycity7value,deliverycity8value,deliverycity9value,deliverycity10value,
-            deliveryarea1title,deliveryarea2title, deliveryarea3title,deliveryarea4title,deliveryarea5title, deliveryarea6title,deliveryarea7title,deliveryarea8title, deliveryarea9title,deliveryarea10title,
-            deliverycity1title,deliverycity2title,deliverycity3title,deliverycity4title,deliverycity5title,deliverycity6title,deliverycity7title,deliverycity8title,deliverycity9title,deliverycity10title;
+            shopareatitle, shopareavalue, setpintitle;
 
     private static String URL = "http://jl-market.com/vendor/updatevendorinfo.php";
     private static String Edit_URL = "http://jl-market.com/vendor/editshopinformation.php";
-
+    String delivery_time;
     SimpleDraweeView shopimage;
-    EditText minimumordervalue,deliveryfeevalue,minutesvalue, displaynamevalue, category1value, category2value, category3value, category4value, category5value;
+    EditText minimumordervalue,deliveryfeevalue, hoursvalue, displaynamevalue,daysvalue;
     Button uploadimage, createshop;
     Bitmap image;
     GoogleMap googleMap;
-    String deliverycity1,deliverycity2,deliverycity3,areavalue1,areavalue2,areavalue3,
-            displayname, citylocated, arealocated, deliveryminute, minimumorder, deliveryfee, cardpaymentmethods, cashpaymentmethod, openinghour, closinghour, shoplongitude, shoplatitude, flag, flag1;
+    String displayname, citylocated, arealocated, minimumorder, deliveryfee, cardpaymentmethods, cashpaymentmethod, openinghour, closinghour, shoplongitude, shoplatitude, flag, flag1;
     Bitmap shopdisplayimage;
     Uri imageuri;
     boolean isDebittCardChecked = false,isCashonDeliveryChecked = false;
@@ -113,8 +105,7 @@ public class SetUpShop extends AppCompatActivity {
     Dialog loadingdialog;
     ArrayList<vendorprofile> vendorprofiles;
     Button addmorelocation;
-    LinearLayout deliverylocation1,deliverylocation2,deliverylocation3,deliverylocation4,deliverylocation5,deliverylocation6,deliverylocation7,deliverylocation8,deliverylocation9,deliverylocation10;
-
+    TextView daystitle,timeor;
     CheckBox cashondeliverybox, debitcardondeliverycheck;
 
     @Override
@@ -213,7 +204,14 @@ public class SetUpShop extends AppCompatActivity {
                 citylocated = shopcityvalue.getText().toString();
                 arealocated = shopareavalue.getText().toString();
 
-                deliveryminute = minutesvalue.getText().toString();
+                if(!TextUtils.isEmpty(hoursvalue.getText().toString().trim())){
+
+                    delivery_time = hoursvalue.getText().toString().trim() +"hrs";
+                }
+                else if(!TextUtils.isEmpty(daysvalue.getText().toString())){
+
+                    delivery_time = daysvalue.getText().toString().trim() +"day(s)";
+                }
                 minimumorder = minimumordervalue.getText().toString();
                 deliveryfee = deliveryfeevalue.getText().toString();
                 openinghour = openinghourvalue.getText().toString().replace(":00", "");
@@ -283,7 +281,7 @@ public class SetUpShop extends AppCompatActivity {
                 }
                 String uploadStringImage = getStringImage(image);
                 String serverResponse = new CreateShop().GetData(URL, displayname, citylocated, arealocated, Double.toString(latitude), Double.toString(longitude),
-                        deliveryminute, minimumorder, deliveryfee, cashpaymentmethod, cardpaymentmethods, openinghour, closinghour, uploadStringImage, vendoremail);
+                        delivery_time, minimumorder, deliveryfee, cashpaymentmethod, cardpaymentmethods, openinghour, closinghour, uploadStringImage, vendoremail);
 
                 if (serverResponse != null) {
                     try {
@@ -358,7 +356,7 @@ public class SetUpShop extends AppCompatActivity {
             }
             String uploadStringImage = getStringImage(image);
             String serverResponse = new EditShop().GetData(Edit_URL,vendorprofiles.get(0).getDisplayname(), displayname, citylocated, arealocated, Double.toString(latitude), Double.toString(longitude),
-                    deliveryminute, minimumorder, deliveryfee, cashpaymentmethod, cardpaymentmethods, openinghour, closinghour, uploadStringImage, vendoremail);
+                    delivery_time, minimumorder, deliveryfee, cashpaymentmethod, cardpaymentmethods, openinghour, closinghour, uploadStringImage, vendoremail);
 
             if (serverResponse != null) {
                 try {
@@ -523,20 +521,16 @@ public class SetUpShop extends AppCompatActivity {
     }
 
     private void showloadingdialog() {
-        loadingdialog = new Dialog(this, R.style.Dialog_Theme);
+        loadingdialog = new Dialog(SetUpShop.this, android.R.style.Theme_Light);
+        loadingdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         loadingdialog.setContentView(R.layout.loadingdialog);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.loading);
         ImageView image = loadingdialog.findViewById(R.id.loadingimage);
         DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
-        Glide.with(this).load(R.drawable.loading).into(imageViewTarget);
-        loadingdialog.show();
+        Glide.with(SetUpShop.this).load(R.drawable.loading).into(imageViewTarget);
         loadingdialog.setCancelable(false);
-        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            loadingdialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            loadingdialog.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
+
+        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        loadingdialog.show();
     }
 
 
@@ -564,9 +558,11 @@ public class SetUpShop extends AppCompatActivity {
         deliverytimetitle = (TextView) findViewById(R.id.deliverytimetitle);
 
 
-        minimumordertitle = (TextView) findViewById(R.id.deliverytimeminutestitle);
-        minutesvalue =  findViewById(R.id.deliverytimeminutesvalue);
-        minutestitle = (TextView) findViewById(R.id.deliverytimeminutestitle);
+        minimumordertitle = (TextView) findViewById(R.id.minimumordertitle);
+        hoursvalue =  findViewById(R.id.deliverytimehoursvalue);
+        hourstitle = (TextView) findViewById(R.id.deliverytimehourstitle);
+        daysvalue = findViewById(R.id.deliverytimedaysvalue);
+
         minimumordertitle = (TextView) findViewById(R.id.minimumordertitle);
         minimumordervalue = findViewById(R.id.minimumordervalue);
         openinghourtitle = (TextView) findViewById(R.id.openinghourtitle);
@@ -581,11 +577,15 @@ public class SetUpShop extends AppCompatActivity {
         shopareatitle = (TextView) findViewById(R.id.shopareatitle);
         shopareavalue = (TextView) findViewById(R.id.shopareavalue);
         setpintitle = (TextView) findViewById(R.id.setpinlocationtitle);
+        daysvalue = findViewById(R.id.deliverytimedaysvalue);
+        daystitle = findViewById(R.id.deliverytimedaystitle);
         paymentmethodtitle = findViewById(R.id.paymentmethodtitle);
 
 
 
         paymentmethodtitle.setTypeface(customfont);
+        daystitle.setTypeface(customfont);
+        daysvalue.setTypeface(customfont);
 
 
 
@@ -616,8 +616,8 @@ public class SetUpShop extends AppCompatActivity {
 
         title.setTypeface(customfont2);
         uploadimage.setTypeface(customfont);
-        minutesvalue.setTypeface(customfont);
-        minutestitle.setTypeface(customfont);
+        hoursvalue.setTypeface(customfont);
+        hourstitle.setTypeface(customfont);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -634,7 +634,14 @@ public class SetUpShop extends AppCompatActivity {
                  vendorprofiles.get(0).setDeliveryfee("");
              }
             displaynamevalue.setText(vendorprofiles.get(0).getDisplayname());
-            minutesvalue.setText(vendorprofiles.get(0).getDeliveryminute());
+
+             if(vendorprofiles.get(0).getDeliveryminute().endsWith("day(s)")){
+               daysvalue.setText(vendorprofiles.get(0).getDeliveryminute().replace("day(s)",""));
+             }
+             else if(vendorprofiles.get(0).getDeliveryminute().endsWith("hrs")){
+                 hoursvalue.setText(vendorprofiles.get(0).getDeliveryminute().replace("hrs",""));
+             }
+
             minimumordervalue.setText(vendorprofiles.get(0).getMinimumorder());
             deliveryfeevalue.setText(vendorprofiles.get(0).getDeliveryfee());
 
@@ -949,12 +956,16 @@ public class SetUpShop extends AppCompatActivity {
                 shopareavalue.setError(null);
             }
 
-            if(TextUtils.isEmpty(deliveryminute)){
-                minutesvalue.setError("Required");
+            if(TextUtils.isEmpty(delivery_time)){
+                Toast.makeText(this, "Please Provide Delivery Time", Toast.LENGTH_SHORT).show();
+                valid = false;
+            }
+            if(!TextUtils.isEmpty(hoursvalue.getText().toString().trim()) && !TextUtils.isEmpty(daysvalue.getText().toString().trim())){
+                Toast.makeText(this, "Please Provide Delivery Time in hour(s) or day(s) not both", Toast.LENGTH_SHORT).show();
                 valid = false;
             }
             else{
-                minutesvalue.setError(null);
+                hoursvalue.setError(null);
             }
             if(TextUtils.isEmpty(minimumorder)){
                 minimumordervalue.setError("Required");

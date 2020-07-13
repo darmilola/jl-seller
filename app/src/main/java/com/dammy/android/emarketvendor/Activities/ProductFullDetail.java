@@ -29,6 +29,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -658,22 +659,17 @@ public class ProductFullDetail extends AppCompatActivity {
         }
     }
     private void showloadingdialog() {
-        loadingdialog = new Dialog(this, R.style.Dialog_Theme);
+        loadingdialog = new Dialog(ProductFullDetail.this, android.R.style.Theme_Light);
+        loadingdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         loadingdialog.setContentView(R.layout.loadingdialog);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.loading);
         ImageView image = loadingdialog.findViewById(R.id.loadingimage);
         DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
-        Glide.with(this).load(R.drawable.loading).into(imageViewTarget);
-        loadingdialog.show();
+        Glide.with(ProductFullDetail.this).load(R.drawable.loading).into(imageViewTarget);
         loadingdialog.setCancelable(false);
-        //getActivity().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            loadingdialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            loadingdialog.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
-    }
 
+        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        loadingdialog.show();
+    }
     private Boolean isNetworkAvailable() {
 
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);

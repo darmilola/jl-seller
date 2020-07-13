@@ -31,7 +31,7 @@ public class GettingStartedActivity extends AppCompatActivity {
             "<h3>Step 3:</h3>\n" +
             "<p>Add delivery location:</p>\n" +
             "<p>Visit the delivery location page to add the State and area you can deliver to within the delivery time specified during setting up shop.\n" +
-            "    Note: You cannot deliver to more than 10 delivery locations.</p>\n" +
+            "    Note: You can add unlimited delivery locations across nigerian state and campuses.</p>\n" +
             "<h3>Step 4:</h3>\n" +
             "<p>Add products:</p>\n" +
             "    <p>You can add all the product you want to be selling grouped in their respective categories.</p>\n" +

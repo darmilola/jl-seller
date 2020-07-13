@@ -330,26 +330,7 @@ public class forgotpassword extends AppCompatActivity {
             String category8 = j.getString("productcategory8");
             String category9 = j.getString("productcategory9");
             String category10 = j.getString("productcategory10");
-            String deliverycity1 = j.getString("deliverycity1");
-            String deliverycity2 = j.getString("deliverycity2");
-            String deliverycity3 = j.getString("deliverycity3");
-            String deliverycity4 = j.getString("deliverycity4");
-            String deliverycity5 = j.getString("deliverycity5");
-            String deliverycity6 = j.getString("deliverycity6");
-            String deliverycity7 = j.getString("deliverycity7");
-            String deliverycity8 = j.getString("deliverycity8");
-            String deliverycity9 = j.getString("deliverycity9");
-            String deliverycity10 = j.getString("deliverycity10");
-            String deliveryarea1 = j.getString("deliveryarea1");
-            String deliveryarea2 = j.getString("deliveryarea2");
-            String deliveryarea3 = j.getString("deliveryarea3");
-            String deliveryarea4 = j.getString("deliveryarea4");
-            String deliveryarea5 = j.getString("deliveryarea5");
-            String deliveryarea6 = j.getString("deliveryarea6");
-            String deliveryarea7 = j.getString("deliveryarea7");
-            String deliveryarea8 = j.getString("deliveryarea8");
-            String deliveryarea9 = j.getString("deliveryarea9");
-            String deliveryarea10 = j.getString("deliveryarea10");
+
             String password = j.getString("password");
             String shopopen = j.getString("shopopen");
             vendorprofile = new vendorprofile(firstname, lastname, email, phonenumber, profilepicture);
@@ -390,67 +371,7 @@ public class forgotpassword extends AppCompatActivity {
                 category10 = "";
             }
 
-            if(deliverycity1.equalsIgnoreCase("null")){
-                deliverycity1 = "";
-            }
-            if(deliverycity2.equalsIgnoreCase("null")){
-                deliverycity2 = "";
-            }
-            if(deliverycity3.equalsIgnoreCase("null")){
-                deliverycity3 = "";
-            }
-            if(deliverycity4.equalsIgnoreCase("null")){
-                deliverycity4 = "";
-            }
-            if(deliverycity5.equalsIgnoreCase("null")){
-                deliverycity5 = "";
-            }
-            if(deliverycity6.equalsIgnoreCase("null")){
-                deliverycity6 = "";
-            }
-            if(deliverycity7.equalsIgnoreCase("null")){
-                deliverycity7 = "";
-            }
-            if(deliverycity8.equalsIgnoreCase("null")){
-                deliverycity8 = "";
-            }
-            if(deliverycity9.equalsIgnoreCase("null")){
-                deliverycity9 = "";
-            }
-            if(deliverycity10.equalsIgnoreCase("null")){
-                deliverycity10 = "";
-            }
 
-            if(deliveryarea1.equalsIgnoreCase("null")){
-                deliveryarea1 = "";
-            }
-            if(deliveryarea2.equalsIgnoreCase("null")){
-                deliveryarea2 = "";
-            }
-            if(deliveryarea3.equalsIgnoreCase("null")){
-                deliveryarea3 = "";
-            }
-            if(deliveryarea4.equalsIgnoreCase("null")){
-                deliveryarea4 = "";
-            }
-            if(deliveryarea5.equalsIgnoreCase("null")){
-                deliveryarea5 = "";
-            }
-            if(deliveryarea6.equalsIgnoreCase("null")){
-                deliveryarea6 = "";
-            }
-            if(deliveryarea7.equalsIgnoreCase("null")){
-                deliveryarea7 = "";
-            }
-            if(deliveryarea8.equalsIgnoreCase("null")){
-                deliveryarea8 = "";
-            }
-            if(deliveryarea9.equalsIgnoreCase("null")){
-                deliveryarea9 = "";
-            }
-            if(deliveryarea10.equalsIgnoreCase("null")){
-                deliveryarea10 = "";
-            }
             vendorprofile.setCategory1(category1);
             vendorprofile.setCategory2(category2);
             vendorprofile.setCategory3(category3);
@@ -462,27 +383,7 @@ public class forgotpassword extends AppCompatActivity {
             vendorprofile.setCategory9(category9);
             vendorprofile.setCategory10(category10);
 
-            vendorprofile.setDeliverycity1(deliverycity1);
-            vendorprofile.setDeliverycity2(deliverycity2);
-            vendorprofile.setDeliverycity3(deliverycity3);
-            vendorprofile.setDeliverycity4(deliverycity4);
-            vendorprofile.setDeliverycity5(deliverycity5);
-            vendorprofile.setDeliverycity6(deliverycity6);
-            vendorprofile.setDeliverycity7(deliverycity7);
-            vendorprofile.setDeliverycity8(deliverycity8);
-            vendorprofile.setDeliverycity9(deliverycity9);
-            vendorprofile.setDeliverycity10(deliverycity10);
 
-            vendorprofile.setDeliveryarea1(deliveryarea1);
-            vendorprofile.setDeliveryarea2(deliveryarea2);
-            vendorprofile.setDeliveryarea3(deliveryarea3);
-            vendorprofile.setDeliveryarea4(deliveryarea4);
-            vendorprofile.setDeliveryarea5(deliveryarea5);
-            vendorprofile.setDeliveryarea6(deliveryarea6);
-            vendorprofile.setDeliveryarea7(deliveryarea7);
-            vendorprofile.setDeliveryarea8(deliveryarea8);
-            vendorprofile.setDeliveryarea9(deliveryarea9);
-            vendorprofile.setDeliveryarea10(deliveryarea10);
             vendorprofile.setOpenportal(openportal);
             vendorprofile.setPriceofgoodssold(priceofgoodssold);
             vendorprofile.setPaymentstate(paymentstate);

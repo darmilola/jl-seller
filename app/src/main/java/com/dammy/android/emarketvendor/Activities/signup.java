@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,6 +80,7 @@ public class signup extends AppCompatActivity {
     CloseableReference mref;
     SimpleDraweeView profileimage;
     Dialog loadingdialog;
+    TextView getId;
     private static String Vendor_SignUp_url = "http://jl-market.com/vendor/newvendorregistration.php";
 
     @Override
@@ -128,6 +130,7 @@ public class signup extends AppCompatActivity {
         vendoridfield = (EditText) findViewById(R.id.vendorid);
         toolbar = (Toolbar) findViewById(R.id.signuptoolbar);
         security_question_field = findViewById(R.id.signup_security_answer);
+        getId = findViewById(R.id.get_reg_id);
         profileimage = (SimpleDraweeView) findViewById(R.id.vendorsignupprofileimage);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -136,6 +139,7 @@ public class signup extends AppCompatActivity {
 
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         signup.setTypeface(customfont2);
+        getId.setTypeface(customfont2);
         createaccount.setTypeface(customfont2);
         firstnamefield.setTypeface(customfont2);
         lastnamefield.setTypeface(customfont2);
@@ -190,23 +194,27 @@ public class signup extends AppCompatActivity {
 
             }
         });
+
+        getId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse("http://jl-market.com/RegistrationForm/registration.php"));
+                startActivity(intent);
+            }
+        });
     }
 
     private void showloadingdialog() {
-        loadingdialog = new Dialog(com.dammy.android.emarketvendor.Activities.signup.this, R.style.Dialog_Theme);
+        loadingdialog = new Dialog(signup.this, android.R.style.Theme_Light);
+        loadingdialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         loadingdialog.setContentView(R.layout.loadingdialog);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.loading);
         ImageView image = loadingdialog.findViewById(R.id.loadingimage);
         DrawableImageViewTarget imageViewTarget = new DrawableImageViewTarget(image);
-        Glide.with(this).load(R.drawable.loading).into(imageViewTarget);
-        loadingdialog.show();
+        Glide.with(signup.this).load(R.drawable.loading).into(imageViewTarget);
         loadingdialog.setCancelable(false);
-        getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            loadingdialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            loadingdialog.getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
-        }
+
+        loadingdialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00000000")));
+        loadingdialog.show();
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
